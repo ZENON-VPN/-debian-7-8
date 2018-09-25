@@ -1,9 +1,9 @@
-# Script Installation VPN -Debian-7-8
+# Script Installation VPN Debian 7 - 8
 
 **OpenVPN, Webmin, Proxy, SSH Dropbear**
 
 _________________________________________________
-# **ZENON-AUTO-VPN -Debian-7-8**
+# **ZENON-AUTO-VPN Debian 7 - 8**
 
 
 
@@ -21,3 +21,4 @@ __________________________________________________
  -ZENON-VPM.NET-
  
  **TimeZone**   :  Thailand
+___________________________________________________
