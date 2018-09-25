@@ -25,9 +25,9 @@ echo ""
 echo " Install... ( 5% )
 "
 # set repo
-wget -q -O /etc/apt/sources.list "https://tv-netvpn.000webhostapp.com/G/conf/sources.list.debian8"
-wget -q "https://tv-netvpn.000webhostapp.com/G/conf/dotdeb.gpg"
-wget -q "https://tv-netvpn.000webhostapp.com/G/conf/jcameron-key.asc"
+wget -q -O /etc/apt/sources.list "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/sources.list.debian8"
+wget -q "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/dotdeb.gpg"
+wget -q "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 clear
@@ -82,16 +82,16 @@ echo -e "\033[1;34m"
 
 apt-get update 
 # install openvpn
-wget -q -O /etc/openvpn/openvpn.tar "https://tv-netvpn.000webhostapp.com/G/conf/openvpn-debian.tar"
+wget -q -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -q -O /etc/openvpn/1194.conf "https://tv-netvpn.000webhostapp.com/G/conf/1194.conf"
+wget -q -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 iptables-save > /etc/iptables_yg_baru_dibikin.conf
-wget -q -O /etc/network/if-up.d/iptables "https://tv-netvpn.000webhostapp.com/G/conf/iptables"
+wget -q -O /etc/network/if-up.d/iptables "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/iptables"
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 clear
@@ -101,7 +101,7 @@ echo " Install... ( 45% )
 echo -e "\033[1;35m "
 # konfigurasi openvpn
 cd /etc/openvpn/
-wget -q -O /etc/openvpn/SpeedVPN.ovpn "https://tv-netvpn.000webhostapp.com/G/conf/client-1194.conf"
+wget -q -O /etc/openvpn/SpeedVPN.ovpn "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/client-1194.conf"
 MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | grep -v '192.168'`;
 sed -i s/xxxxxxxxx/$MYIP/g /etc/openvpn/SpeedVPN.ovpn;
 clear
@@ -112,9 +112,9 @@ echo -e "\033[1;36m "
 apt-get update
 # install badvpn
 cd
-wget -q -O /usr/bin/badvpn-udpgw "https://tv-netvpn.000webhostapp.com/G/conf/badvpn-udpgw"
+wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -q -O /usr/bin/badvpn-udpgw "https://tv-netvpn.000webhostapp.com/G/conf/badvpn-udpgw64"
+  wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -196,8 +196,8 @@ http {
 END3
 mkdir -p /home/vps/public_html
 mkdir -p /home/vps/public_html/ConfigPanel
-wget -q -O /home/vps/public_html/index.php "https://tv-netvpn.000webhostapp.com/G/conf/speed.txt"
-wget -q -O /home/vps/public_html/UserOnline.php "https://tv-netvpn.000webhostapp.com/G/conf/api.txt"
+wget -q -O /home/vps/public_html/index.php "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/speed.txt"
+wget -q -O /home/vps/public_html/UserOnline.php "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/api.txt"
 echo "management localhost 5555" >> /etc/openvpn/1194.conf
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 args='$args'
@@ -272,7 +272,7 @@ echo -e "\033[1;33m"
 # Install Squid
 apt-get -y install squid3
 cp /etc/squid3/squid.conf /etc/squid3/squid.conf.orig
-wget -q -O /etc/squid3/squid.conf "https://tv-netvpn.000webhostapp.com/G/conf/squid3.conf" 
+wget -q -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/squid3.conf" 
 MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | grep -v '192.168'`;
 sed -i s/xxxxxxxxx/$MYIP/g /etc/squid3/squid.conf;
 service squid3 restart
@@ -300,8 +300,8 @@ echo -e "\033[1;35m"
 echo -e "\033[1;35m"
 # download script
 cd /usr/bin
-wget -q -O menu "https://tv-netvpn.000webhostapp.com/G/menu.sh"
-wget -q -O speedtest "https://tv-netvpn.000webhostapp.com/G/speedtest.py"
+wget -q -O menu "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/menu.sh"
+wget -q -O speedtest "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/speedtest.py"
 
 echo "30 3 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
@@ -309,15 +309,15 @@ chmod +x speedtest
 chmod +x menu
 
 
-wget -q -O royyeem "https://tv-netvpn.000webhostapp.com/G/config/true.txt"
+wget -q -O royyeem "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/config/true.txt"
 bash royyeem
-wget -q -O royyeem "https://tv-netvpn.000webhostapp.com/G/config/dtac.txt"
+wget -q -O royyeem "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/config/dtac.txt"
 bash royyeem
 rm -f royyeem
 cp /home/vps/public_html/VPN-Internet_TRUE.ovpn /home/vps/public_html/ConfigPanel/Config.ovpn
 cp /home/vps/public_html/VPN-Internet_TRUE.ovpn /home/vps/public_html/ConfigPanel/SpeedVPN.ovpn
 
-wget -O aa "https://tv-netvpn.000webhostapp.com/G/conf/squid.txt"
+wget -O aa "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/squid.txt"
 bash aa
 rm aa
 
@@ -355,9 +355,9 @@ echo " =============
  Timezone : Asia/Thailand (GMT +7) 
  IPv6     : [off] 
  =============================================
- credit.  : Dev By Pichet Buanuan 
- Facebook : https://facebook.com/GengPichet
- Line     : ID:pichet11227
+ credit.  : Dev By Ekkachai Chompoowiset
+ Facebook : https://www.facebook.com/ekkachai.2541
+ Line     : -
  ============================================="
 echo " VPS AUTO REBOOT 00.00"
 echo " ===================================== " 
