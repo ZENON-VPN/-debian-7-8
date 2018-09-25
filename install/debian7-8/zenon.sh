@@ -285,13 +285,15 @@ echo " Install... ( 90% )
 
 # install webmin
 echo " install Webmin..."
-cd
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.680_all.deb
-dpkg -i --force-all webmin_1.680_all.deb;
-apt-get -y -f install;
-rm /root/webmin_1.680_all.deb
-service webmin restart
 
+cd
+wget "http://script.hostingtermurah.net/repo/webmin_1.801_all.deb"
+dpkg --install webmin_1.801_all.deb;
+apt-get -y -f install;
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+rm /root/webmin_1.801_all.deb
+service webmin restart
+service vnstat restart
 
 
 clear
@@ -334,6 +336,8 @@ service cron restart
 service ssh restart
 service dropbear restart
 service squid3 restart
+service vnstat restart
+service webmin restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
