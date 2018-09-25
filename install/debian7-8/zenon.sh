@@ -61,13 +61,13 @@ echo " Install... ( 35% )
 "
 echo "clear" >> .bashrc
 echo -e " "
-echo 'echo -e "\033[01;32m  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
-echo 'echo -e "  {    Wallcom to server Debian7-8    }"' >> .bashrc
-echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
+echo 'echo -e "\033[01;32m  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
+echo 'echo -e "  {     Wallcom to server Debian7-8     }"' >> .bashrc
+echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
 echo 'echo -e "  { Script mod by Ekkachai Chompoowiset }"' >> .bashrc
-echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
-echo 'echo -e "  {   prin { menu } Show menu items   }"' >> .bashrc
-echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
+echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
+echo 'echo -e "  {    prin { menu } Show menu items    }"' >> .bashrc
+echo 'echo -e "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"' >> .bashrc
 echo -e "\033[1;33m"
 
 # setting time
