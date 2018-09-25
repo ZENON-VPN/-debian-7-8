@@ -1,6 +1,6 @@
 # Script Installation VPN -Debian-7-8
 
-**OpenVPN, Pritunl, Proxy, SSH Dropbear**
+**OpenVPN, Webmin, Proxy, SSH Dropbear**
 
 _________________________________________________
 # **ZENON-AUTO-VPN -Debian-7-8**
