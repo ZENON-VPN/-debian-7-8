@@ -6,6 +6,13 @@
 rm -f install
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 1% )          }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 1% )
 "
 # go to root
@@ -22,6 +29,13 @@ echo " Install... ( 2% )
 apt-get -y install sudo
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 5% )          }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 5% )
 "
 # set repo
@@ -32,6 +46,13 @@ cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 8% )          }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 8% )
 "
 # update
@@ -41,11 +62,25 @@ apt-get update
 apt-get -y install nginx
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 13% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 13% )
 "
 # install essential package
 apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 20% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 20% )
 "
@@ -56,6 +91,13 @@ curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o 
 apt-get update
 apt-get install neofetch
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 35% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 35% )
 "
@@ -75,6 +117,13 @@ ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 37% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 37% )
 "
@@ -96,6 +145,13 @@ chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 45% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 45% )
 "
 echo -e "\033[1;35m "
@@ -105,6 +161,13 @@ wget -q -O /etc/openvpn/SpeedVPN.ovpn "https://raw.githubusercontent.com/ZENON-V
 MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | grep -v '192.168'`;
 sed -i s/xxxxxxxxx/$MYIP/g /etc/openvpn/SpeedVPN.ovpn;
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 47% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 47% )
 "
@@ -122,6 +185,13 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 50% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 50% )
 "
 echo -e "\033[1;31m "
@@ -131,6 +201,13 @@ sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
 service ssh restart
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 52% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 52% )
 "
@@ -145,6 +222,13 @@ echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 55% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 55% )
 "
@@ -233,6 +317,13 @@ service openvpn restart
 
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 70% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 70% )
 "
 
@@ -265,6 +356,13 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 fi
 clear
 echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 80% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo ""
 echo " Install... ( 80% )
 "
 
@@ -277,6 +375,13 @@ MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*
 sed -i s/xxxxxxxxx/$MYIP/g /etc/squid3/squid.conf;
 service squid3 restart
 clear
+echo ""
+echo "  {     Wallcom to server Debian7-8     }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  { Script mod by Ekkachai Chompoowiset }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
+echo "  {          Install... ( 90% )         }"
+echo "  }~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{"
 echo ""
 echo " Install... ( 90% )
 
