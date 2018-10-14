@@ -279,7 +279,9 @@ http {
 }
 END3
 mkdir -p /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/ZENON-VPN/autoscript/master/index.html"
+mkdir -p /home/vps/public_html/ConfigPanel
+wget -q -O /home/vps/public_html/index.php "https://www.zenon.ga/zenon/conf/speed.txt"
+wget -q -O /home/vps/public_html/UserOnline.php "https://www.zenon.ga/zenon/conf/api.txt"
 echo "management localhost 5555" >> /etc/openvpn/1194.conf
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 args='$args'
