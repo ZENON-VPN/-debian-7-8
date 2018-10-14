@@ -290,7 +290,7 @@ document_root='$document_root'
 fastcgi_script_name='$fastcgi_script_name'
 cat > /etc/nginx/conf.d/vps.conf <<END4
 server {
-  listen       80;
+  listen       81;
   server_name  127.0.0.1 localhost;
   access_log /var/log/nginx/vps-access.log;
   error_log /var/log/nginx/vps-error.log error;
@@ -390,11 +390,10 @@ echo " Install... ( 90% )
 # install webmin
 echo " install Webmin..."
 cd
-wget "http://script.hostingtermurah.net/repo/webmin_1.801_all.deb"
-dpkg --install webmin_1.801_all.deb;
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.680_all.deb
+dpkg -i --force-all webmin_1.680_all.deb;
 apt-get -y -f install;
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-rm /root/webmin_1.801_all.deb
+rm /root/webmin_1.680_all.deb
 service webmin restart
 
 
