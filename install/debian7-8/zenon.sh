@@ -390,10 +390,11 @@ echo " Install... ( 90% )
 # install webmin
 echo " install Webmin..."
 cd
-wget -q -O webmin-current.deb "http://www.webmin.com/download/deb/webmin-current.deb"
-dpkg -i --force-all webmin-current.deb;
+wget "http://script.hostingtermurah.net/repo/webmin_1.801_all.deb"
+dpkg --install webmin_1.801_all.deb;
 apt-get -y -f install;
-rm /root/webmin-current.deb
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+rm /root/webmin_1.801_all.deb
 service webmin restart
 
 
