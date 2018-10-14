@@ -279,9 +279,7 @@ http {
 }
 END3
 mkdir -p /home/vps/public_html
-mkdir -p /home/vps/public_html/ConfigPanel
-wget -q -O /home/vps/public_html/index.php "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/speed.txt"
-wget -q -O /home/vps/public_html/UserOnline.php "https://raw.githubusercontent.com/ZENON-VPN/-debian-7-8/master/conf/api.txt"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/ZENON-VPN/autoscript/master/index.html"
 echo "management localhost 5555" >> /etc/openvpn/1194.conf
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 args='$args'
@@ -290,7 +288,7 @@ document_root='$document_root'
 fastcgi_script_name='$fastcgi_script_name'
 cat > /etc/nginx/conf.d/vps.conf <<END4
 server {
-  listen       81;
+  listen       80;
   server_name  127.0.0.1 localhost;
   access_log /var/log/nginx/vps-access.log;
   error_log /var/log/nginx/vps-error.log error;
@@ -387,18 +385,14 @@ echo " Install... ( 90% )
 
 "
 
-
 # install webmin
 echo " install Webmin..."
-
 cd
-wget "http://script.hostingtermurah.net/repo/webmin_1.801_all.deb"
-dpkg --install webmin_1.801_all.deb;
+wget -q -O webmin-current.deb "http://www.webmin.com/download/deb/webmin-current.deb"
+dpkg -i --force-all webmin-current.deb;
 apt-get -y -f install;
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-rm /root/webmin_1.801_all.deb
+rm /root/webmin-current.deb
 service webmin restart
-service vnstat restart
 
 
 clear
@@ -459,7 +453,7 @@ echo " =============
  Config   : OpenVPN (TCP 1194)
  =============================================
  badvpn   : badvpn-udpgw port 7300 
- nginx    : 81 
+ nginx    : 80 
  Webmin   : http://$MYIP:10000/ 
  Timezone : Asia/Thailand (GMT +7) 
  IPv6     : [off] 
